@@ -56,7 +56,7 @@ function App() {
         >
           Up! Tech Library
         </h5>
-        <div style={{ width: '60%', zIndex: 2 }}>
+        <div className='search-form' style={{ width: '100%', zIndex: 2 }}>
           <InputGroup size='lg' className='mb-3'>
             <Input
               value={query}

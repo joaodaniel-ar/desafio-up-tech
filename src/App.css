@@ -21,8 +21,9 @@ body {
   z-index: 0;
 }
 
-.main-image h5{
-  font-size: 3em;
+.search-form{
+  max-width: 800px;
+  padding: 0 20px;
 }
 
 .voice-search{
@@ -173,6 +174,15 @@ button:hover .tooltiptext {
 }
 
 @media screen and (max-width:768px){
+  .spinner-border{
+    margin: 0 auto;
+  }
+
+  .main-image h5{
+    font-size: 2em;
+    font-weight: bolder;
+  }
+
   .container{
     overflow-y: scroll;
   }
@@ -195,6 +205,10 @@ button:hover .tooltiptext {
   }
 
   .d-flex img{
+    display: none;
+  }
+
+  .voice-search{
     display: none;
   }
 }
