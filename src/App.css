@@ -1,6 +1,6 @@
 body {
   height: 100vh;
-  background: url(https://spanishdoughnuts.com.au/wp-content/uploads/2016/10/wood-bg.jpg);
+  background: url(img/wood-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
@@ -10,7 +10,7 @@ body {
 }
 
 .main-image {
-  background: url(https://wallpaperaccess.com/full/3876089.jpg);
+  background: url(img/lib-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
