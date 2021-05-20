@@ -22,6 +22,7 @@ function App() {
   const { transcript, resetTranscript } = useSpeechRecognition();
   // Handle Search
   const handleSubmit = () => {
+    setScrollX(0);
     setLoading(true);
     axios
       .get(
@@ -106,7 +107,7 @@ function App() {
       );
     } else {
       const items = cards.map((item, i) => {
-        let thumbnail = 'sem-capa.jpg';
+        let thumbnail = 'default.jpg';
         if (item.volumeInfo.imageLinks) {
           thumbnail = item.volumeInfo.imageLinks.thumbnail;
         }

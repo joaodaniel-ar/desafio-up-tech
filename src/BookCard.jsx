@@ -60,7 +60,7 @@ const BookCard = ({
               target='_blank'
               rel='noopener noreferrer'
             >
-              Preview Link
+              Prévia do Livro
             </a>
           </div>
           <div className='divider'></div>
@@ -73,7 +73,7 @@ const BookCard = ({
               target='_blank'
               rel='noopener noreferrer'
             >
-              Info Link
+              Informações Gerais
             </a>
           </div>
         </div>
