@@ -11,6 +11,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import axios from 'axios';
 import BookCard from './BookCard.jsx';
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 function App() {
   // States
   const [maxResults] = useState(40);
@@ -18,6 +19,7 @@ function App() {
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(false);
   const [cards, setCards] = useState([]);
+  const { transcript, resetTranscript } = useSpeechRecognition();
   // Handle Search
   const handleSubmit = () => {
     setLoading(true);
@@ -61,7 +63,7 @@ function App() {
               onChange={e => setQuery(e.target.value)}
             />
             <InputGroupAddon addonType='append'>
-              <Button className='voice-search' color='secondary' onClick={handleSubmit}>
+              <Button className='voice-search' color='secondary' onClick={SpeechRecognition.startListening}>
                 <span className='tooltiptext'>Pesquisar por voz</span>
                 <i className='fas fa-microphone'></i>
               </Button>
