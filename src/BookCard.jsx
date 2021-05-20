@@ -12,7 +12,7 @@ const BookCard = ({
   infoLink,
   publishedDate
 }) => {
-  // States
+  
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
 
