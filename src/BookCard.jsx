@@ -9,7 +9,8 @@ const BookCard = ({
   authors,
   publisher,
   previewLink,
-  infoLink
+  infoLink,
+  publishedDate
 }) => {
   // States
   const [modal, setModal] = useState(false);
@@ -43,7 +44,7 @@ const BookCard = ({
             <img src={thumbnail} alt={title} style={{ height: '320px' }} />
             <div class="book-content">
               <p>{description}</p>
-              <p>Page Count: {pageCount} | Language : {language} | Authors : {authors} | Publisher : {publisher}</p>
+              <p>Páginas: {pageCount} | Idioma : {language} | Autor : {authors} | Publisher : {publisher} | Data de Publicação: {publishedDate}</p>
             </div>
           </div>
           <div>

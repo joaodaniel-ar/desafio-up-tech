@@ -20,6 +20,10 @@ body {
     background-attachment: fixed;
     z-index: 0;
   }
+
+  .main-image h5{
+    font-size: 3em;
+  }
   
   .filter:after {
     background-color: rgba(0, 0, 0, 0.4);
@@ -44,7 +48,9 @@ body {
   
   .container{
     padding: 0;
-    margin: -4em 3em 20px;
+    margin: -5em 0;
+    overflow: hidden;
+    min-width: 100% !important;
   }
   
   .container .row{
@@ -111,5 +117,9 @@ body {
   }
   
   .book-content{
-    padding: 20px;
+    padding:0 20px;
+  }
+
+
+  @media screen and (max-width:600px){
   }

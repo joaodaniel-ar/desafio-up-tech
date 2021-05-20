@@ -52,7 +52,7 @@ function App() {
           className='display-2 text-center text-white mb-3'
           style={{ zIndex: 2 }}
         >
-          BookHub
+          Up! Tech Library
         </h5>
         <div style={{ width: '60%', zIndex: 2 }}>
           <InputGroup size='lg' className='mb-3'>
@@ -90,11 +90,6 @@ function App() {
           x = (window.innerWidth - listW) - 60;
       }
       setScrollX(x);
-      
-      if (x == (-6854)){
-        x = 0;
-        setScrollX(x);
-      }
   }
 
   const handleCards = () => {
@@ -120,6 +115,7 @@ function App() {
               language={item.volumeInfo.language}
               authors={item.volumeInfo.authors}
               publisher={item.volumeInfo.publisher}
+              publishedDate={item.volumeInfo.publishedDate}
               description={item.volumeInfo.description}
               previewLink={item.volumeInfo.previewLink}
               infoLink={item.volumeInfo.infoLink}
