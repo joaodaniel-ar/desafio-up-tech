@@ -25,3 +25,8 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
+
+## Usage
+
+Through this system, you will be able to find your favorite books, save them in a list and see previews and information.
+Voice searches are also possible.
