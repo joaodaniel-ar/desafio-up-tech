@@ -106,7 +106,7 @@ function App() {
       );
     } else {
       const items = cards.map((item, i) => {
-        let thumbnail = '';
+        let thumbnail = 'sem-capa.jpg';
         if (item.volumeInfo.imageLinks) {
           thumbnail = item.volumeInfo.imageLinks.thumbnail;
         }
