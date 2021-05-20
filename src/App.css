@@ -1,0 +1,115 @@
+body {
+    height: 100vh;
+    background: url(https://spanishdoughnuts.com.au/wp-content/uploads/2016/10/wood-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  .main-image {
+    background: url(https://wallpaperaccess.com/full/3876089.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 60vh;
+    position: relative;
+    background-attachment: fixed;
+    z-index: 0;
+  }
+  
+  .filter:after {
+    background-color: rgba(0, 0, 0, 0.4);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .card-title {
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
+    font-size: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  .container{
+    padding: 0;
+    margin: -4em 3em 20px;
+  }
+  
+  .container .row{
+    transition: all ease 0.2s;
+  }
+  
+  .bookRow--item{
+    padding: 0 2px;
+    cursor: pointer;
+  }
+  
+  .card{
+    background: none;
+    border:none;
+  }
+  
+  .card img{
+    transform: scale(0.9);
+    transition: all ease 0.2s;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 18px 14px 10px -4px rgba(0,0,0,0.14); 
+    box-shadow: 0px 10px 13px -7px #000000, 18px 14px 10px -4px rgba(0,0,0,0.14);
+  }
+  
+  .card img:hover{
+    transform: scale(1);
+  }
+  
+  .bookRow-left,
+   .bookRow-right {
+      position:absolute;   
+      width: 40px;
+      height: 272px;
+      background-color:rgba(0,0,0,0.6);
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor:pointer;
+      opacity: 0;
+      transition : all ease 0.2s;
+  }
+  
+   .bookRow-left{
+       left: 0;
+   }
+  
+   .bookRow-right{
+      right: 0;
+  }
+  
+  .row:hover .bookRow-left,
+  .row:hover .bookRow-right{
+      opacity: 1;
+  }
+  
+  .modal-dialog{
+    max-width: 80%;
+    color: #000000;
+  }
+  
+  .modal-content{
+    height: 90vh;
+  }
+  
+  .book-content{
+    padding: 20px;
+  }
