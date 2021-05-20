@@ -45,6 +45,11 @@ function App() {
         console.log(err.response);
     });
   };
+  const handleKeyPress = (event) => {
+    if(event.key === 'Enter'){
+      handleSubmit();
+    }
+  }
   // Main Show Case
   const mainHeader = () => {
     return (
@@ -60,8 +65,10 @@ function App() {
         <div className='search-form' style={{ width: '100%', zIndex: 2 }}>
           <InputGroup size='lg' className='mb-3'>
             <Input
+              className='search-input'
               value={query}
               onChange={e => setQuery(e.target.value)}
+              onKeyPress={handleKeyPress}
             />
             <InputGroupAddon addonType='append'>
               <Button className='voice-search' color='secondary' onClick={SpeechRecognition.startListening}>
