@@ -1,26 +1,20 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {
-  InputGroup,
-  Input,
-  InputGroupAddon,
-  Button,
-  Spinner
-} from 'reactstrap';
+import {InputGroup, Input, InputGroupAddon, Button, Spinner} from 'reactstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import axios from 'axios';
 import BookCard from './BookCard.jsx';
-import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import SpeechRecognition, {useSpeechRecognition} from 'react-speech-recognition';
+
 function App() {
-  // States
   const [maxResults] = useState(40);
   const [startIndex] = useState(1);
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(false);
   const [cards, setCards] = useState([]);
   const { transcript, resetTranscript } = useSpeechRecognition();
-  // Handle Search
+
   const handleSubmit = () => {
     setScrollX(0);
     setLoading(true);
@@ -45,16 +39,17 @@ function App() {
         console.log(err.response);
     });
   };
+
   const handleKeyPress = (event) => {
     if(event.key === 'Enter'){
       handleSubmit();
     }
   }
-  // Main Show Case
+ 
   const mainHeader = () => {
     return (
       <div className='main-image d-flex justify-content-center align-items-center flex-column'>
-        {/* Overlay */}
+        {}
         <div className='filter'></div>
         <h5
           className='display-2 text-center text-white mb-3'
@@ -154,6 +149,7 @@ function App() {
       );
     }
   };
+
   return (
     <div className='w-100 h-100'>
       {mainHeader()}
@@ -161,6 +157,6 @@ function App() {
       <ToastContainer />
     </div>
   );
-}
+};
 
 export default App;
