@@ -57,11 +57,14 @@ function App() {
         <div style={{ width: '60%', zIndex: 2 }}>
           <InputGroup size='lg' className='mb-3'>
             <Input
-              placeholder='Utilize a barra de pesquisa ou o microfone para pesquisar...'
               value={query}
               onChange={e => setQuery(e.target.value)}
             />
             <InputGroupAddon addonType='append'>
+              <Button className='voice-search' color='secondary' onClick={handleSubmit}>
+                <span className='tooltiptext'>Pesquisar por voz</span>
+                <i className='fas fa-microphone'></i>
+              </Button>
               <Button color='secondary' onClick={handleSubmit}>
                 <i className='fas fa-search'></i>
               </Button>
