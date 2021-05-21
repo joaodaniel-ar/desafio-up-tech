@@ -1,6 +1,6 @@
 # Up! Tech Library
 
-This project is a book search enginemade with Google Books API and React. All types of books are available.
+This project is a book search engine, made with Google Books API and React. All types of books are available.
 
 ## Install
 
