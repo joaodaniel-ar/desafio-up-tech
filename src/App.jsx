@@ -15,12 +15,29 @@ function App() {
   const [cards, setCards] = useState([]);
   const { transcript, resetTranscript } = useSpeechRecognition();
 
+  const browserSupport = () => {
+    if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
+      window.onload = function() {
+        document.getElementById('voice-search').style.display = 'none';
+      }
+    }
+  }
+
+  const voiceSearch = () => {
+    setQuery('');
+    SpeechRecognition.startListening();
+
+    setTimeout(function(){
+      handleSubmit();
+    }, 3000);
+  }
+
   const handleSubmit = () => {
     setScrollX(0);
     setLoading(true);
     axios
       .get(
-        `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=${maxResults}&startIndex=${startIndex}`
+        `https://www.googleapis.com/books/v1/volumes?q=${query + transcript}&maxResults=${maxResults}&startIndex=${startIndex}`
       )
       .then(res => {
         if (startIndex >= res.data.totalItems || startIndex < 1) {
@@ -43,10 +60,12 @@ function App() {
   const handleKeyPress = (event) => {
     if(event.key === 'Enter'){
       handleSubmit();
+      resetTranscript();
     }
   }
  
   const mainHeader = () => {
+    browserSupport();
     return (
       <div className='main-image d-flex justify-content-center align-items-center flex-column'>
         {}
@@ -66,7 +85,7 @@ function App() {
               onKeyPress={handleKeyPress}
             />
             <InputGroupAddon addonType='append'>
-              <Button className='voice-search' color='secondary' onClick={SpeechRecognition.startListening}>
+              <Button id='voice-search' className='voice-search' color='secondary' onClick={voiceSearch}>
                 <span className='tooltiptext'>Pesquisar por voz</span>
                 <i className='fas fa-microphone'></i>
               </Button>
